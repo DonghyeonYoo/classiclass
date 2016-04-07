@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{ user.username }}{% endblock %}
+{% block content %}
+<ul>
+  <li>아이디: {{ user.username }}</li>
+  <li>휴대폰번호: {{ user.phonenumber }}</li>
+  <li>전공: {{ user.majors }}</li>
+  <li>나이: {{ user.ages }}</li>
+</ul>
+{% endblock %}
