@@ -22,6 +22,7 @@ class Post(models.Model):
 
     tag_set = models.ManyToManyField(
         Tag,
+        blank=True,
     )
 
     def init_hash_id(self):
