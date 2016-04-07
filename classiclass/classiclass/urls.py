@@ -2,6 +2,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from users.views import *
 from classiclass.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -11,4 +13,4 @@ urlpatterns = [
     url(r'^logout/$', LogoutView.as_view(), name="logout"),
     url(r'^signup/$', SignupView.as_view(), name="signup"),
     url(r'^(?P<slug>\w+)/$', ProfileView.as_view(), name='profile'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
