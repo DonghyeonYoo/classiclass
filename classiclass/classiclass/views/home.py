@@ -4,10 +4,10 @@ from django.core.urlresolvers import reverse
 
 
 class HomeView(View):
-    def get(self, requset):
+    def get(self, request):
         template_name = "home.html"
 
-        retrun render(
+        return render(
             request,
             template_name,
             context={},
