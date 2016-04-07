@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}회원가입{% endblock %}
+
+{% block content %}
+<h1>회원가입</h1>
+
+<form action="{% url "signup" %}" method="post">
+  {% csrf_token %}
+
+  <input type="text" name="username" placeholder="아이디" />
+  <input type="password" name="password" placeholder="비밀번호" />
+  <input type="phonenumber" name="phonenumber" placeholder="핸드폰번호"/>
+  <br />
+  <p>선택 항목에 작성된 분야의 정보만 받으실 수 있습니다.</p>
+  <select name="majors">
+    <option value="male_voice">남자성악</option>
+    <option value="female_voice">여자성악</option>
+    <option value="piano">피아노</option>
+    <option value="cpffh">첼로</option>
+  </select>
+  <br />
+  <select name="ages">
+    <option value="chemd">초등</option>
+    <option value="wndemd">중등</option>
+    <option value="rhemd">고등</option>
+    <option value="dlfqks">어른</option>
+    <option value="eogkr">대학</option>
+  </select>
+  <br /><br />
+  <input type="submit" value="회원가입하기" />
+</form>
+{% endblock %}
