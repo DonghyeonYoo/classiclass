@@ -12,5 +12,6 @@ class HomeView(View):
             template_name,
             context={},
         )
+
     def post(self, request):
         pass
