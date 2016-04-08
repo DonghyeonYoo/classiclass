@@ -1,9 +1,8 @@
 from django.views.generic import ListView
 
-from posts.models import Post
+from .base import PostBaseView
 
 
-class PostListView(ListView):
-    model = Post
+class PostListView(PostBaseView, ListView):
     template_name = "posts/home.html"
     context_object_name = "posts"
