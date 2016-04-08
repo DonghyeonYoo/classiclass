@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', PostListView.as_view(), name="posts"),
     url(r'^home/$', HomeView.as_view(), name="home"),
-    url(r'^(?P<pk>\d+)/$', PostDetailView.as_view(), name="post"),
+    url(r'^(?P<slug>\w+)/$', PostDetailView.as_view(), name="post"),
     url(r'^login/$', LoginView.as_view(), name="login"),
     url(r'^logout/$', LogoutView.as_view(), name="logout"),
     url(r'^signup/$', SignupView.as_view(), name="signup"),
