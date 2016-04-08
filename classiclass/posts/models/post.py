@@ -33,15 +33,3 @@ class Post(models.Model):
 
         self.hash_id = get_encoded_hash_id(self)
         self.save()
-
-    def get_absolute_url(self):
-        from django.core.urlresolvers import reverse
-        from django.shortcuts import redirect
-        return redirect(
-            reverse(
-                "posts",
-                kwargs={
-                    "posts": self.hash.id,
-                }
-            )
-        )
