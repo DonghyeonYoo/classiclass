@@ -36,9 +36,12 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
-        return reverse(
-            "post",
-            kwargs={
-                "slug": self.hash_id,
-            }
+        from django.shortcuts import redirect
+        return redirect(
+            reverse(
+                "posts",
+                kwargs={
+                    "posts": self.hash.id,
+                }
+            )
         )

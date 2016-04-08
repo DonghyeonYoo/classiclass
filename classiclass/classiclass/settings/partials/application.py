@@ -92,3 +92,6 @@ RAVEN_CONFIG = {
 # Custem Authenticatation Settings
 
 AUTH_USER_MODEL = "users.User"
+
+# change default login url
+LOGIN_URL = '/login/'
