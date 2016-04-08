@@ -6,4 +6,13 @@
 <h1>PostdetailView<h1>
 <img src="{{ post.thumbnail_image.url }}" width=300 height=300 />
 {{ post.content }}   
+
+<section>
+    <h2>Tags({{ post.tag_set.count }})</h2>
+    <ul>
+        {% for tag in post.tag_set.all %}
+            <li>{{ tag.full_name }}</li>
+        {% endfor %}
+    </ul>    
+</section>
 {% endblock %}
