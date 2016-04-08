@@ -2,13 +2,15 @@ from django.conf.urls import url
 from django.contrib import admin
 from users.views import *
 from classiclass.views import *
+from posts.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', HomeView.as_view(), name="home"),
+    url(r'^$', PostListView.as_view(), name="posts"),
+    url(r'^home/$', HomeView.as_view(), name="home"),
     url(r'^login/$', LoginView.as_view(), name="login"),
     url(r'^logout/$', LogoutView.as_view(), name="logout"),
     url(r'^signup/$', SignupView.as_view(), name="signup"),
