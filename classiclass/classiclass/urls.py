@@ -10,6 +10,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', PostListView.as_view(), name="home"),
+    url(r'^posts/new/$', PostCreateView.as_view(), name="posts-create"),
     url(r'^login/$', LoginView.as_view(), name="login"),
     url(r'^logout/$', LogoutView.as_view(), name="logout"),
     url(r'^signup/$', SignupView.as_view(), name="signup"),
