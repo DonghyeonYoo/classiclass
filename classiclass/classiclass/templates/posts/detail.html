@@ -11,7 +11,11 @@
     <h2>Tags({{ post.tag_set.count }})</h2>
     <ul>
         {% for tag in post.tag_set.all %}
-            <li>{{ tag.full_name }}</li>
+        <li>
+            <a href="{% url "tag" tag.name %}">
+                {{ tag.full_name }}
+            </a>
+        </li>
         {% endfor %}
     </ul>    
     <form action="{% url "post-tags" post.hash_id %}" method="post">
