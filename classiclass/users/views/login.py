@@ -20,7 +20,7 @@ class LoginView(View):
     def post(self, request):
         username = request.POST.get('username')
         password = request.POST.get('password')
-        next_page_url = request.POST.get("next") or reverse("posts")
+        next_page_url = request.POST.get("next") or reverse("home")
 
         user = authenticate(
             username=username,
@@ -29,4 +29,7 @@ class LoginView(View):
         if user:
             login(request, user)
             return redirect(next_page_url)
-        return redirect(reverse('login'))
+        return redirect(reverse('login') + '?next={next_page_url}'.format(
+                next_page_url=next_page_url
+            )
+        )
