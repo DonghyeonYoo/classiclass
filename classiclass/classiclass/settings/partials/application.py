@@ -85,7 +85,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-RAVEN_CONFIG = {
+AVEN_CONFIG = {
     'dsn': 'https://b796b923ff314cba8f55ab78c16c4584:61c165e026514687ab5e14e2d9482332@app.getsentry.com/72871',
 }
 
