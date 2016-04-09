@@ -1,0 +1,8 @@
+<h2>New message</h2>
+{% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li>{{ message.tags }} - {{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}

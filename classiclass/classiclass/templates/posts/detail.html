@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}PostDetailView{% endblock %}
+
+{% block content %}
+<h1>PostdetailView<h1>
+<img src="{{ post.thumbnail_image.url }}" width=300 height=300 />
+{{ post.content }}   
+
+<section>
+    <h2>Tags({{ post.tag_set.count }})</h2>
+    <ul>
+        {% for tag in post.tag_set.all %}
+        <li>
+            <a href="{% url "tag" tag.name %}">
+                {{ tag.full_name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>    
+    <form action="{% url "post-tags" post.hash_id %}" method="post">
+        {% csrf_token %}
+        <input type='text' name="name" placeholder="name" required >
+        <input type="submit" value="태그 등록">
+    </form> 
+</section>
+{% endblock %}
