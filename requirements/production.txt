@@ -2,3 +2,6 @@ Django==1.9.4
 Pillow
 raven
 hashids
+django-pipeline
+django-storages-redux
+boto

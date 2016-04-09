@@ -1,7 +1,5 @@
 import os
 
-import raven
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(
@@ -34,6 +32,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'classiclass',
+    'pipeline',
+    'storages',
     'users',
     'posts',
     'tags',
