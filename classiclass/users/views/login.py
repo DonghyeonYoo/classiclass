@@ -28,6 +28,8 @@ class LoginView(View):
         )
         if user:
             login(request, user)
-            return redirect(reverse('home'))
             return redirect(next_page_url)
-        return redirect(reverse('login'))
+        return redirect(reverse('login') + '?next={next_page_url}'.format(
+                next_page_url=next_page_url
+            )
+        )

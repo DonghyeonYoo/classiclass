@@ -14,7 +14,10 @@ class Post(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
     )
-    image = models.ImageField()
+    thumbnail_image = models.ImageField(
+        blank=True,
+        null=True,
+    )
     content = models.TextField()
 
     created_at = models.DateTimeField(auto_now_add=True, )
@@ -22,6 +25,7 @@ class Post(models.Model):
 
     tag_set = models.ManyToManyField(
         Tag,
+        blank=True,
     )
 
     def init_hash_id(self):
@@ -29,3 +33,12 @@ class Post(models.Model):
 
         self.hash_id = get_encoded_hash_id(self)
         self.save()
+
+    def get_absolute_url(self):
+        from django.core.urlresolvers import reverse
+        return reverse(
+            "post",
+            kwargs={
+                "slug": self.hash_id,
+            }
+        )

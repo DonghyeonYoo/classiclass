@@ -8,3 +8,15 @@ class User(AbstractUser):
     )
     majors = models.TextField()
     ages = models.TextField()
+
+    def get_absolute_url(self):
+        from django.core.urlresolvers import reverse
+        from django.shortcuts import redirect
+        return redirect(
+            reverse(
+                "login",
+                kwargs={
+                    "login": self.login,
+                }
+            )
+        )

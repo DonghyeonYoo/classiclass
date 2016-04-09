@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 
 class HomeView(View):
     def get(self, request):
-        template_name = "home.html"
+        template_name = "home2.html"
 
         return render(
             request,
