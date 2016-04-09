@@ -33,7 +33,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'raven.contrib.django.raven_compat',
     'classiclass',
     'users',
     'posts',
@@ -85,9 +84,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-AVEN_CONFIG = {
-    'dsn': 'https://b796b923ff314cba8f55ab78c16c4584:61c165e026514687ab5e14e2d9482332@app.getsentry.com/72871',
-}
 
 # Custem Authenticatation Settings
 
