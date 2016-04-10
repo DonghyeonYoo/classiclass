@@ -5,3 +5,4 @@ hashids
 django-pipeline
 django-storages-redux
 boto
+djangorestframework
