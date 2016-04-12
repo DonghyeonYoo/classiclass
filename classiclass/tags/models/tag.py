@@ -9,7 +9,7 @@ class Tag(models.Model):
 
     @property
     def full_name(self):
-        return "#{tag_name}".format(
+        return "{tag_name}".format(
             tag_name=self.name,
         )
 
