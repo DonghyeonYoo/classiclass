@@ -1,9 +1,11 @@
 {% load pipeline %}
+{% load staticfiles %}
 <!DOCTYPE>
 <html>
   <head>
     <meta charset=utf-8>
-    {% stylesheet "style" %} 
+    <link rel="stylesheet" href="{% static "css/classiclass.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/vendor/modal.css" %}" type="text/css">
     <title>{% block title%}{% endblock %} :: ClassiClass</title>
   </head>
   <body>
@@ -14,6 +16,9 @@
     {% endblock %}
     </section>
     {% include "partials/footer.html" %}
-  {% javascript "classiclass" %} 
+
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static "js/classiclass.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/modal.js" %}"></script>
   </body>
 </html>
