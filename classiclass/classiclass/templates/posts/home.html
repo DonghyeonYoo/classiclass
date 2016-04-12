@@ -3,15 +3,25 @@
 {% block title %}PostListView{% endblock %}
 
 {% block content %}
-<h1>PostListView<h1>
-<ul>
+{% for post in posts%}
+    <ul id="magnifies" >
+    </ul> 
+{% endfor %}
+<h1>PostListView</h1>
+    <ul>
     {% for post in posts %}
-    <li>
+    <li class="post" data-post-hash-id="{{ post.hash_id }}">
         <a href="{% url "api-post" post.hash_id %}">
             <img src="{{ post.thumbnail_image.url }}" width=300 height=300 />
         </a>
         <h5>{{ post.content }}</h5>   
+    <p><a  href="#modal" rel="modal:open">크게보기</a></p>
     </li>
     {% endfor %}
-</ul>
+    </ul>
+<div id="modal" style="display:none;">
+
+</div>
 {% endblock %}
+
+
