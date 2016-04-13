@@ -14,6 +14,9 @@ class Post(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
     )
+    title = models.CharField(
+        max_length=30,
+    )
     thumbnail_image = models.ImageField(
         blank=True,
         null=True,
@@ -42,3 +45,6 @@ class Post(models.Model):
                 "slug": self.hash_id,
             }
         )
+
+    def __str__(self):
+        return self.title

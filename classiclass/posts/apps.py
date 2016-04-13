@@ -5,4 +5,4 @@ class PostsAppConfig(AppConfig):
     name = "posts"
 
     def ready(self):
-        from posts.signals.post_save import post_save_post, post_save_post_tags
+        from posts.signals.post_save import post_save_post, post_save_post_tags, post_save_post_and_user_is_matched

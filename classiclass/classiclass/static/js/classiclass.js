@@ -17,7 +17,8 @@
         var tags = data["tags"];
 
         var thumbnail_image_html = "<img src='" + thumbnail_image + "'width=100% height=auto >";
-        $("#modal").empty()
+        //$("#modal").empty()
+        modal.html("")
         modal.append(thumbnail_image_html);
       });
     });

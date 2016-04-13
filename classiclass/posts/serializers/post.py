@@ -11,6 +11,7 @@ class PostDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = (
+            'title',
             'thumbnail_image',
             'content',
             'tags',
