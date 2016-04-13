@@ -12,10 +12,6 @@
             <img src="{{ post.thumbnail_image.url }}" width=300 height=300 />
         </a>
         <h5>{{ post.content }}</h5>   
-        <h2>Tags({{ post.tag_set.count }})</h2>
-            {% for tag in post.tag_set.all %}
-                {{ tag.full_name }}
-            {% endfor %}
         </ul>
     <p><a  href="#modal" rel="modal:open">크게보기</a></p>
     </li>
